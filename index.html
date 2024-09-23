@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi TXT ke VCF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Konversi TXT ke VCF</h1>
+
+        <div class="form-group">
+            <label for="txtFile" class="file-label">
+                <input type="file" id="txtFile" class="file-input" accept=".txt" onchange="convertTxtToVcf()">
+                <span id="fileName">Pilih File</span>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Buat file admin?</label>
+            <div class="radio-group">
+                <input type="radio" id="buatAdminYa" name="buatAdmin" value="ya">
+                <label for="buatAdminYa">Ya</label>
+                <input type="radio" id="buatAdminTidak" name="buatAdmin" value="tidak" checked>
+                <label for="buatAdminTidak">Tidak</label>
+            </div>
+        </div>
+
+        <input type="text" id="adminName" class="input-field" placeholder="Nama Admin">
+        <input type="text" id="navyName" class="input-field" placeholder="Nama Navy">
+        <input type="text" id="anggotaName" class="input-field" placeholder="Nama Anggota">
+        <input type="text" id="vcfFileName" class="input-field" placeholder="Nama File">
+
+        <textarea id="vcfOutput" rows="15" placeholder="admin\n16465466251\n447397289387\nnavy\n447498050089\n12364993605\nanggota\n18076962877\n447492317246"></textarea>
+
+        <button class="convert-btn" onclick="downloadVCF()">Konversi TXT ke VCF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
